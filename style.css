@@ -1,0 +1,219 @@
+/* Temel Sıfırlamalar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #313338;
+  color: #dbdee1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Giriş Ekranı */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1f22;
+}
+.auth-box {
+  background: #313338;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 320px;
+}
+.auth-box h2 { color: white; margin-bottom: 8px; }
+.auth-box p { color: #949ba4; font-size: 14px; }
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  background: #1e1f22;
+  border: 1px solid #111;
+  color: white;
+  border-radius: 4px;
+}
+.auth-box button {
+  width: 100%;
+  padding: 10px;
+  background: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Discord Ana Layout */
+.discord-app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sol Bar (Sunucular) */
+.server-sidebar {
+  width: 72px;
+  background-color: #1e1f22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  gap: 8px;
+}
+.server-icon {
+  width: 48px;
+  height: 48px;
+  background: #313338;
+  color: #dbdee1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+}
+.server-icon:hover {
+  border-radius: 16px;
+  background: #5865f2;
+  color: white;
+}
+.separator {
+  width: 32px;
+  height: 2px;
+  background: #35363c;
+  margin: 4px 0;
+}
+
+/* Orta Bar (Kanallar & Profil) */
+.channel-sidebar {
+  width: 240px;
+  background-color: #2b2d31;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.search-bar {
+  padding: 10px;
+  background: #1e1f22;
+  margin: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #949ba4;
+  text-align: center;
+}
+.dm-list {
+  flex: 1;
+  padding: 10px;
+}
+.dm-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #949ba4;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.dm-item.active, .dm-item:hover {
+  background: #35373c;
+  color: white;
+}
+.dm-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #949ba4;
+  margin-top: 20px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+.user-profile {
+  background: #232428;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.user-name { font-weight: bold; color: white; font-size: 14px; }
+.user-id { font-size: 11px; color: #949ba4; }
+
+/* Ana İçerik Alanı */
+.main-content {
+  flex: 1;
+  background: #313338;
+  display: flex;
+  flex-direction: column;
+}
+.top-nav {
+  height: 48px;
+  border-bottom: 2px solid #1f2023;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 15px;
+}
+.nav-title { font-weight: bold; color: white; margin-right: 10px; }
+.top-nav button {
+  background: transparent;
+  border: none;
+  color: #b5bac1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.top-nav button.active {
+  background: #404249;
+  color: white;
+}
+.top-nav button.add-friend-btn {
+  background: #248046;
+  color: white;
+}
+.top-nav button.add-friend-btn.active {
+  background: transparent;
+  color: #248046;
+}
+
+.content-body { padding: 30px; flex: 1; }
+.view-section h3 { font-size: 12px; color: #949ba4; margin-bottom: 16px; letter-spacing: 0.5px; }
+.view-section p { color: #b5bac1; font-size: 14px; margin-bottom: 20px; }
+
+.add-friend-form input {
+  width: 70%;
+  padding: 12px;
+  background: #1e1f22;
+  border: 1px solid #111;
+  border-radius: 8px;
+  color: white;
+}
+.add-friend-form button {
+  padding: 12px 20px;
+  background: #5865f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.empty-state { color: #949ba4 !important; font-style: italic; margin-top: 20px; }
+
+/* Arkadaş Satırı */
+.friend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #3f4147;
+}
+.friend-name { color: white; font-weight: 600; }
+.friend-tag { color: #949ba4; font-size: 12px; margin-left: 5px; }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Klonu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="auth-container" class="auth-container">
+        <div class="auth-box">
+            <h2>Hoş Geldiniz!</h2>
+            <p>Lütfen bir kullanıcı adı seçerek hesap oluşturun.</p>
+            <form id="auth-form">
+                <input type="text" id="username-input" placeholder="Kullanıcı adı" maxlength="15" required>
+                <button type="submit">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="discord-app" class="discord-app" style="display: none;">
+        
+        <div class="server-sidebar">
+            <div class="server-icon discord-home">DM</div>
+            <div class="separator"></div>
+            <div class="server-icon">+</div>
+        </div>
+
+        <div class="channel-sidebar">
+            <div class="search-bar">Konuşma bul veya başlat</div>
+            <div class="dm-list">
+                <button class="dm-item active">✨ Arkadaşlar</button>
+                <p class="dm-title">Direkt Mesajlar</p>
+                <div id="dm-friends-list">
+                    </div>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-info">
+                    <div id="user-display-name" class="user-name">Yükleniyor...</div>
+                    <div id="user-display-id" class="user-id">#0000</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="top-nav">
+                <span class="nav-title">🙋 Arkadaşlar</span>
+                <button id="tab-online" class="active">Çevrimiçi</button>
+                <button id="tab-add" class="add-friend-btn">Arkadaş Ekle</button>
+            </div>
+
+            <div class="content-body">
+                <div id="view-online" class="view-section">
+                    <h3 id="friends-count-title">TÜM ARKADAŞLAR — 0</h3>
+                    <div id="friends-list-container">
+                        <p class="empty-state">Burada kimse yok... ID paylaşıp arkadaş eklemeyi dene!</p>
+                    </div>
+                </div>
+
+                <div id="view-add" class="view-section" style="display: none;">
+                    <h3>ARKADAŞ EKLE</h3>
+                    <p>Arkadaşlarını benzersiz ID'leri ile ekleyebilirsin. Örn: Ahmet#4321</p>
+                    <form id="add-friend-form" class="add-friend-form">
+                        <input type="text" id="friend-id-input" placeholder="KullanıcıAdı#0000 formatında girin" required>
+                        <button type="submit">Arkadaşlık İsteği Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
